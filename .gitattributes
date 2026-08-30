@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+*.png binary
+*.zip binary
+vendor/livekit-client.umd.js linguist-vendored
+docs/screenshots/* linguist-documentation

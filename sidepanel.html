@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="sidepanel.css" />
+    <script src="sidepanel.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="mark"></span>
+        <div><strong>RedCall</strong><small>Live Translate</small></div>
+      </div>
+      <span id="accountBadge" class="badge muted">Déconnecté</span>
+    </header>
+    <main>
+      <section id="loginView" class="card hero">
+        <span class="eyebrow">OPENAI REALTIME</span>
+        <h1>Traduction temps réel</h1>
+        <p>
+          Connectez votre compte RedCall, puis choisissez l’onglet à traduire. Aucun pilote ni
+          réglage Windows.
+        </p>
+        <button id="loginButton" class="primary">Se connecter à RedCall</button>
+        <p class="trust">Connexion sécurisée PKCE · mot de passe jamais stocké dans Chrome.</p>
+      </section>
+
+      <div id="appView" hidden>
+        <section class="card status-card">
+          <div>
+            <span id="statusDot" class="dot idle"></span
+            ><strong id="statusTitle">Prêt à traduire</strong>
+            <p id="statusDetail">Sélectionnez le mode et les langues.</p>
+          </div>
+          <button id="logoutButton" class="icon-button" title="Déconnecter cet appareil">↪</button>
+        </section>
+        <p id="providerBadge" class="trust">Moteur de traduction RedCall</p>
+
+        <section class="card">
+          <label>Mode</label>
+          <div class="segmented">
+            <button data-mode="listen" class="mode active">
+              <span>🎧</span>Écouter traduit<small>Tout onglet audio</small>
+            </button>
+            <button data-mode="bidirectional" class="mode">
+              <span>⇄</span>Deux sens<small>Meet · Zoom · Telegram</small>
+            </button>
+          </div>
+          <div class="grid2">
+            <div>
+              <label for="sourceLanguage">Langue entendue</label
+              ><select id="sourceLanguage"></select>
+            </div>
+            <div>
+              <label for="userLanguage">Ma langue</label
+              ><select id="userLanguage"></select>
+            </div>
+          </div>
+          <div id="inboundVoiceGroup">
+            <label for="inboundVoice">Voix que j’écoute</label
+            ><select id="inboundVoice"></select>
+          </div>
+          <div id="outboundGroup" hidden>
+            <label for="outboundVoice">Voix entendue par le correspondant</label
+            ><select id="outboundVoice"></select>
+          </div>
+          <p id="adaptiveVoiceNote" class="hint" hidden>
+            OpenAI Realtime adapte automatiquement la voix au locuteur. Aucune voix clonée n’est
+            envoyée à OpenAI.
+          </p>
+          <label class="range-label"
+            >Son original de l’onglet <output id="volumeOutput">0 %</output></label
+          >
+          <input id="originalVolume" type="range" min="0" max="100" value="0" />
+          <p class="hint">À 0 %, vous n’entendez que la traduction. Un casque reste recommandé.</p>
+        </section>
+
+        <section id="safetyCard" class="notice" hidden>
+          <strong>Protection anti-double voix</strong>
+          <p>
+            Sur Meet, Zoom et Telegram Web, RedCall remplace la piste micro par la piste traduite.
+            Si la traduction se coupe, la piste distante reste silencieuse.
+          </p>
+        </section>
+        <button id="startButton" class="primary large">Choisir l’onglet et traduire</button>
+        <button id="stopButton" class="danger large" hidden>Arrêter et restaurer le micro</button>
+        <p id="errorBox" class="error" hidden></p>
+        <footer>
+          <button id="advancedButton" class="link">Serveur : redcall.tech</button>
+          <div id="advanced" hidden>
+            <label for="apiBase">Adresse API RedCall</label
+            ><input id="apiBase" value="https://redcall.tech/redcall-api" /><button
+              id="saveApi"
+              class="secondary"
+            >
+              Enregistrer
+            </button>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>

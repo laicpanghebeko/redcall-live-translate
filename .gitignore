@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.zip
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,42 @@
+name: Publish tagged release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Validate source
+        run: npm ci && npm run validate
+
+      - name: Package Chrome runtime
+        run: |
+          archive="redcall-live-translate-${GITHUB_REF_NAME}.zip"
+          zip -r "$archive" \
+            manifest.json \
+            service-worker.js sidepanel.html sidepanel.css sidepanel.js \
+            offscreen.html offscreen.js content-bridge.js site-adapter.js \
+            mic-permission.html mic-permission.js assets/icons vendor
+          echo "ARCHIVE=$archive" >> "$GITHUB_ENV"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "$ARCHIVE" --generate-notes --verify-tag

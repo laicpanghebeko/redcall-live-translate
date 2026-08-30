@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "RedCall Live Translate",
+  "short_name": "Live Translate",
+  "version": "1.6.0",
+  "description": "Traduction audio RedCall en temps réel pour l’onglet Chrome choisi.",
+  "homepage_url": "https://redcall.tech",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "tabCapture",
+    "desktopCapture",
+    "storage",
+    "identity",
+    "offscreen",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://redcall.tech/*",
+    "https://meet.google.com/*",
+    "https://zoom.us/*",
+    "https://*.zoom.us/*",
+    "https://web.telegram.org/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Ouvrir RedCall Live Translate",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://zoom.us/*",
+        "https://*.zoom.us/*",
+        "https://web.telegram.org/*"
+      ],
+      "js": ["content-bridge.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://meet.google.com/*",
+        "https://zoom.us/*",
+        "https://*.zoom.us/*",
+        "https://web.telegram.org/*"
+      ],
+      "js": ["vendor/livekit-client.umd.js", "site-adapter.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

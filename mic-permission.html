@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>RedCall — Autorisation du microphone</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        background: #f7f8fa;
+        color: #101828;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e4e7ec;
+        border-radius: 14px;
+        padding: 32px;
+        max-width: 460px;
+        box-shadow: 0 2px 12px rgba(16, 24, 40, 0.06);
+      }
+      h1 {
+        font-size: 19px;
+        margin: 0 0 8px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.55;
+        color: #475467;
+        margin: 0 0 16px;
+      }
+      .state {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 14px;
+        border-radius: 10px;
+        margin-top: 8px;
+      }
+      .ok {
+        background: #ecfdf3;
+        color: #027a48;
+      }
+      .ko {
+        background: #fef3f2;
+        color: #b42318;
+      }
+      .wait {
+        background: #f2f4f7;
+        color: #475467;
+      }
+      button {
+        background: #ef4444;
+        color: #fff;
+        border: 0;
+        border-radius: 9px;
+        padding: 11px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Autoriser le microphone</h1>
+      <p>
+        Le mode <strong>Deux sens</strong> a besoin de votre microphone pour traduire votre voix.
+        Chrome ne peut pas afficher cette demande depuis le panneau latéral, d’où cette page.
+      </p>
+      <p>
+        Cliquez ci-dessous, puis choisissez <strong>Autoriser</strong> dans la fenêtre de Chrome.
+      </p>
+      <button id="ask">Autoriser le microphone</button>
+      <div id="state" class="state wait">En attente de votre autorisation…</div>
+    </div>
+    <script src="mic-permission.js"></script>
+  </body>
+</html>

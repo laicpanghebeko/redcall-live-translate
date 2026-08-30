@@ -1,0 +1,20 @@
+{
+  "name": "redcall-live-translate",
+  "version": "1.6.0",
+  "private": true,
+  "description": "Chrome Manifest V3 client for RedCall real-time voice translation.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:syntax": "node --check content-bridge.js && node --check mic-permission.js && node --check offscreen.js && node --check service-worker.js && node --check sidepanel.js && node --check site-adapter.js && node --check tests/validate.mjs",
+    "test": "node tests/validate.mjs",
+    "validate": "npm run format:check && npm run check:syntax && npm test"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}

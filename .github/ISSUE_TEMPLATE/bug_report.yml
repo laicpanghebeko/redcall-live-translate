@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible extension problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value:
+        Do not disclose credentials, tokens, recordings, transcripts, or security vulnerabilities
+        here. Follow SECURITY.md for sensitive reports.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: 1.6.0
+    validations:
+      required: true
+  - type: input
+    id: chrome
+    attributes:
+      label: Chrome and operating-system version
+      placeholder: Chrome 152 on Windows 11
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Translation mode
+      options:
+        - Listen translated
+        - Bidirectional
+        - Authentication or setup
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Browser target
+      placeholder: Generic audio tab, Google Meet, Zoom Web, or Telegram Web K/A
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest safe sequence that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs
+      description: Remove tokens, account data, meeting links, and personal information.

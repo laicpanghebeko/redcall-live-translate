@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title description">
+  <title id="title">RedCall Live Translate</title>
+  <desc id="description">A red speech mark with two translation waves on a navy background.</desc>
+  <rect width="128" height="128" rx="28" fill="#071b3c"/>
+  <path d="M35 28a30 30 0 1 0 20 55l13 13V74a30 30 0 0 0-33-46Z" fill="none" stroke="#ff3f4a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 42c10 5 16 13 16 22S80 81 70 86M86 31c15 8 25 19 25 33S101 90 86 97" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+</svg>

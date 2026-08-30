@@ -1,0 +1,274 @@
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  color: #0b1b3b;
+  background: #f5f7fb;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 330px;
+}
+header {
+  height: 68px;
+  padding: 0 18px;
+  background: #071b3c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #ff3f4a;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand > div {
+  display: grid;
+}
+.brand strong {
+  font-size: 17px;
+}
+.brand small {
+  font-size: 10px;
+  color: #9fb1d0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.mark {
+  width: 28px;
+  height: 28px;
+  border: 7px solid #ff3f4a;
+  border-right-color: transparent;
+  border-radius: 50%;
+}
+.badge {
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  background: #12315f;
+  color: #dce9ff;
+}
+.badge.muted {
+  opacity: 0.7;
+}
+main {
+  padding: 14px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #dae2ef;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 5px 18px rgba(15, 40, 80, 0.05);
+}
+.hero {
+  padding: 22px;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  color: #ff3f4a;
+  letter-spacing: 0.12em;
+}
+h1 {
+  font-size: 25px;
+  margin: 7px 0 8px;
+}
+.hero p,
+.hint,
+.trust,
+#statusDetail,
+.notice p {
+  color: #62708a;
+  line-height: 1.5;
+}
+.trust {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+.status-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.status-card strong {
+  font-size: 15px;
+}
+.status-card p {
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 7px;
+  background: #9ba8bb;
+}
+.dot.active {
+  background: #19ab64;
+  box-shadow: 0 0 0 4px #daf5e7;
+}
+.dot.working {
+  background: #f0a326;
+  box-shadow: 0 0 0 4px #fff0cf;
+}
+.dot.error {
+  background: #e33140;
+  box-shadow: 0 0 0 4px #ffe1e4;
+}
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 720;
+  margin: 13px 0 6px;
+}
+select,
+input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 9px;
+  padding: 10px;
+  color: #0b1b3b;
+  font: inherit;
+}
+select:focus,
+input:focus,
+button:focus-visible {
+  outline: 3px solid rgba(255, 63, 74, 0.18);
+  border-color: #ff3f4a;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #ccd6e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.mode {
+  border: 0;
+  background: #fff;
+  color: #172947;
+  padding: 11px 7px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.mode + button {
+  border-left: 1px solid #ccd6e5;
+}
+.mode span {
+  display: block;
+  font-size: 16px;
+}
+.mode small {
+  display: block;
+  font-size: 9px;
+  color: #718098;
+  margin-top: 3px;
+}
+.mode.active {
+  background: #fff1f2;
+  color: #d92e3b;
+  box-shadow: inset 0 -3px #ff3f4a;
+}
+.primary,
+.danger,
+.secondary {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-weight: 760;
+  cursor: pointer;
+}
+.primary {
+  background: #ff3f4a;
+  color: #fff;
+}
+.primary:hover {
+  background: #e8323d;
+}
+.danger {
+  background: #0b1b3b;
+  color: #fff;
+}
+.secondary {
+  background: #edf2f8;
+  color: #193153;
+  margin-top: 8px;
+}
+.large {
+  width: 100%;
+  font-size: 14px;
+  margin-top: 3px;
+}
+.icon-button,
+.link {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #64748b;
+}
+.range-label {
+  display: flex;
+  justify-content: space-between;
+}
+.hint {
+  font-size: 10px;
+  margin: 5px 0 0;
+}
+.notice {
+  padding: 13px;
+  border: 1px solid #b8d5ff;
+  background: #eef6ff;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.notice strong {
+  font-size: 12px;
+  color: #1456a3;
+}
+.notice p {
+  font-size: 10px;
+  margin: 4px 0 0;
+}
+.error {
+  padding: 11px;
+  background: #fff0f0;
+  border: 1px solid #ffc9cd;
+  color: #a62430;
+  border-radius: 10px;
+  font-size: 12px;
+}
+footer {
+  margin: 16px 0;
+  text-align: center;
+  border-top: 1px solid #dce3ed;
+  padding-top: 12px;
+}
+footer .link {
+  font-size: 11px;
+}
+footer #advanced {
+  text-align: left;
+}
+.range-label output {
+  color: #ff3f4a;
+}
